@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/users")
@@ -29,9 +28,10 @@ public class DemoController {
     }
 
     @PostMapping("/save")
-    public String saveUser(User user) {
+    public String saveUser(User user, Model model) {
         userRepository.save(user);
-        return "redirect:/users";
+        model.addAttribute("message", "User edited successfully!");
+        return "user/form";
     }
 
     @GetMapping("/edit/{id}")
@@ -42,8 +42,10 @@ public class DemoController {
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteUser(@PathVariable("id") Long id) {
+    public String deleteUser(@PathVariable("id") Long id, Model model) {
         userRepository.deleteById(id);
-        return "redirect:/users";
+        model.addAttribute("users", userRepository.findAll());
+        model.addAttribute( "message", "User deleted succesfully!" );
+        return "user/list";
     }
 }
