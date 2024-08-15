@@ -1,3 +1,29 @@
+main h5{
+    text-align: center;
+    justify-content: center;
+}
+
+.cardStyle {
+    margin-left: 20vh;
+    text-align: center;
+    justify-content: center;
+    margin-top: 15vh;
+    background: #0092BC;
+    border: 1px solid white;
+    width: 35vh;
+    height: 40vh;
+
+}
+
+.cardStyle h5{
+    color: white;
+}
+
+.cardStyle a {
+    text-decoration: none;
+    color: white;
+}
+
 .alert {
     padding: 20px;
     background-color: #4CAF50;
