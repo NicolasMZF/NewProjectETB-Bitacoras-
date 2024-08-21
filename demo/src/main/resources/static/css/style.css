@@ -1,10 +1,61 @@
+:root{
+    --primary-color: #0092BC;
+    --secondary-color: #214780;
+    --thirdly-color: #ff5d39;
+    --fourthly-color: #fff; 
+}
+
+body {
+    display: flex;
+}
+
+.marginBot{
+    margin-bottom: 6vh;
+}
+
+.marginTop{
+    margin-top: 10vh;
+}
+
+i img{
+    width: 7vh;
+    height: 7vh;
+}
+
+.barNav{
+    color: var(--primary-color);
+    background-color: var(--primary-color)s;
+    width: 40vh;
+    height: 100vh;
+    border: 1vh solid black;
+}
+
+.nav {
+    background-color: var(--primary-color);
+    width: 40vh;
+    height: 100vh;
+    border: 0.5vh solid var(--fourthly-color);
+}
+
+.nav a{
+    text-decoration: none;
+    color: var(--fourthly-color);
+    font-size: 3vh;
+    padding: 1vh;
+    margin: 1vh;
+    margin-left: 5vh;
+}
+
+
 main h5{
     text-align: center;
     justify-content: center;
+    border: 1px solid #0092BC;
+    color: #0092BC;
 }
 
 .cardStyle {
-    margin-left: 90vh;
+    margin-left: 50vh;
     text-align: center;
     justify-content: center;
     margin-top: 15vh;
@@ -17,6 +68,7 @@ main h5{
 
 .cardStyle h5{
     color: white;
+    
 }
 
 .cardStyle a {
