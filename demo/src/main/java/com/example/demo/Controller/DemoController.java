@@ -1,6 +1,6 @@
 package com.example.demo.Controller;
 
-import com.example.demo.User;
+import com.example.demo.Model.User;
 import com.example.demo.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,7 +21,7 @@ public class DemoController {
     @GetMapping
     public String listUsers(Model model) {
         model.addAttribute("users", userService.getAllUsers());
-        return "user/form";
+        return "user/list";
     }
 
     @GetMapping("/new")
@@ -53,13 +53,13 @@ public class DemoController {
                             @RequestParam(required = false) String phone) {
         User user = new User(id, name, email, phone);
         userService.saveUser(user);
-        return "user/form";
+        return "user/list";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteUser(@PathVariable Long id, Model model) {
         userService.deleteUserById(id);
         model.addAttribute( "message", "User deleted succesfully!" );
-        return "user/form";
+        return "user/list";
     }
 }
