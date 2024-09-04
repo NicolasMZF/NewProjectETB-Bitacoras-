@@ -15,12 +15,24 @@
     <h1>User List</h1>
     <a href="/">Back</a> <br><br>
     <a href="/users/new">Add New User</a>
+    <h2>Create User</h2>
+    <form th:action="@{/users/new}" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        <label for="phone">Phone:</label>
+        <input type="text" name="phone" id="phone">
+        <button type="submit">Save</button>
+    </form>
+
     <table>
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
+                <th>Phone</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -29,6 +41,7 @@
                 <td th:text="${user.id}">ID</td>
                 <td th:text="${user.name}">Name</td>
                 <td th:text="${user.email}">Email</td>
+                <td th:text="${user.phone}">Phone</td>
                 <td>
                     <a th:href="@{/users/edit/{id}(id=${user.id})}">Edit</a>
                     <a th:href="@{/users/delete/{id}(id=${user.id})}">Delete</a>
